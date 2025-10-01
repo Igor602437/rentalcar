@@ -15,7 +15,7 @@ interface FilterPanelProps {
 
 export default function FilterPanel({ onFilter }: FilterPanelProps) {
   const [brands, setBrands] = useState<string[]>([]);
-  const [brand, setBrand] = useState('');
+  const [brand, setBrand] = useState(''); // ✅ есть локальные стейты
   const [rentalPrice, setRentalPrice] = useState('');
   const [minMileage, setMinMileage] = useState('');
   const [maxMileage, setMaxMileage] = useState('');
@@ -40,7 +40,7 @@ export default function FilterPanel({ onFilter }: FilterPanelProps) {
 
     const filters: Record<string, string> = {
       page: '1',
-      brand: brand.trim(),
+      brand: brand.trim(), // ✅ используем локальный стейт
       rentalPrice: rentalPrice.trim(),
       minMileage: minMileage.trim(),
       maxMileage: maxMileage.trim(),
@@ -64,15 +64,17 @@ export default function FilterPanel({ onFilter }: FilterPanelProps) {
         cleanedFilters.maxMileage
       );
 
+      // Передаём результат наверх
       onFilter(cars, totalPages, filters);
+
+      // Сбрасываем форму после успешного поиска
+      setBrand('');
+      setRentalPrice('');
+      setMinMileage('');
+      setMaxMileage('');
     } catch (err) {
       toast.error('Error fetching cars');
     }
-
-    setBrand('');
-    setRentalPrice('');
-    setMinMileage('');
-    setMaxMileage('');
   };
 
   return (
