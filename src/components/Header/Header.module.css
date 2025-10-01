@@ -1,0 +1,44 @@
+.headerPanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  margin: 0 auto;
+  padding: 8px 0;
+  background: var(--badges);
+  display: flex;
+  justify-content: center;
+}
+.navPanel {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navMenu {
+  margin-left: auto;
+  display: flex;
+  gap: 32px;
+}
+.link {
+  padding: 16px 8px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--main);
+}
+.link:hover {
+  color: var(--button-hover);
+}
+.active {
+  color: var(--button-hover);
+  font-weight: bold;
+}
+.logo {
+  font-weight: 1000;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.logoSpan {
+  color: blueviolet;
+}
