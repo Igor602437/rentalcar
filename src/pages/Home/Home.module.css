@@ -1,0 +1,39 @@
+.hero {
+  max-width: 1440px;
+  height: 700px;
+  margin-top: 68px;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-image: image-set(
+    url('../../assets/images/car1x.webp') type('image/webp') 1x,
+    url('../../assets/images/car2x.webp') type('image/webp') 2x,
+    url('../../assets/images/car1x.jpg') type('image/jpeg') 1x,
+    url('../../assets/images/car2x.jpg') type('image/jpeg') 2x
+  );
+}
+
+.container {
+  text-align: center;
+  color: var(--white);
+}
+.titleHero {
+  padding-top: 436px;
+}
+.description {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.buttonCatalog {
+  padding: 12px 88px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white);
+}

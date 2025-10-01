@@ -18,7 +18,7 @@ export default function App() {
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </BrowserRouter>
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 }
