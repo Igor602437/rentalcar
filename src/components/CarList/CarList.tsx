@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import type { CarProps } from '../../types/car';
 // import { Icon } from '../../../public/sprite.svg';
 import css from './CarList.module.css';
+import { Icon } from '../Icon/Icon';
 
 interface CarListProps {
   car: CarProps;
@@ -39,9 +40,9 @@ export default function CarList({ car }: CarListProps) {
         >
           {/* {isFavorite ? (
             <Icon id="hearton" className={css.activeIcon} />
-          ) : (
-            <Icon id="heart" className={css.inactiveIcon} />
-          )} */}
+          ) : ( */}
+          <Icon id="heart" className={css.inactiveIcon} />
+          {/* )} */}
         </button>
       </div>
 
