@@ -1,0 +1,72 @@
+.imageWrapper {
+  position: relative;
+  display: inline-block;
+}
+.image {
+  display: block;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 20, 23, 0.5) 0%,
+    rgba(18, 20, 23, 0.5) 100%
+  );
+  height: 268px;
+}
+.favoriteButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+.favoriteButton:hover {
+  background: transparent;
+}
+.iconActive {
+  fill: #3470ff;
+}
+.iconInactive {
+  fill: #f2f4f7;
+}
+
+.brand {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 12px;
+  margin-bottom: 8px;
+}
+.title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+.model {
+  color: var(--button);
+}
+.description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+}
+.company {
+  margin-bottom: 4px;
+}
+.mileage {
+  margin-bottom: 32px;
+}
+
+.buttonDetails {
+  padding: 12px 0;
+  width: 100%;
+  transition: background-color 0.5s ease;
+}
+.buttonDetails:hover {
+  background: var(--button-hover);
+}

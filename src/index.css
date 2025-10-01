@@ -11,6 +11,11 @@
   --button: #3470ff;
   --button-hover: #0b44cd;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 h1,
 h2,
@@ -39,6 +44,10 @@ button {
   border: none;
   border-radius: 12px;
   background: var(--button);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white);
 }
 button:hover {
   background: var(--button-hover);
