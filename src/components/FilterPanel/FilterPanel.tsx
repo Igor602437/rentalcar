@@ -50,11 +50,6 @@ export default function FilterPanel({ onFilter }: FilterPanelProps) {
       Object.entries(filters).filter(([_, v]) => v !== '')
     );
 
-    if (Object.keys(cleanedFilters).length === 1) {
-      alert('Please fill in at least one field');
-      return;
-    }
-
     try {
       const { cars, totalPages } = await fetchCars(
         cleanedFilters.page,
