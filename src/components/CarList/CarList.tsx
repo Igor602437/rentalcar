@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import type { CarProps } from '../../types/car';
-// import { Icon } from '../../../public/sprite.svg';
 import css from './CarList.module.css';
 import { Icon } from '../Icon/Icon';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState, AppDispatch } from '../../store/store';
+import { addFavorite, removeFavorite } from '../../store/favoritesSlice';
 
 interface CarListProps {
   car: CarProps;
@@ -10,20 +12,26 @@ interface CarListProps {
 
 export default function CarList({ car }: CarListProps) {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  // const favorites = useSelector(
-  // (state: RootState) => state.favorites.favorites
-  // );
-  // const isFavorite = favorites.some(f => f.id === car.id);
+  const dispatch = useDispatch<AppDispatch>();
 
-  // const toggleFavorite = () => {
-  //   if (isFavorite) {
-  //     dispatch(removeFavorite(car.id));
-  //   } else {
-  //     dispatch(addFavorite(car));
-  //   }
-  // };
+  // Получаем список избранного из глобального состояния
+  const favorites = useSelector(
+    (state: RootState) => state.favorites.favorites
+  );
 
+  // Проверяем, находится ли текущее авто в избранном
+  const isFavorite = favorites.some(f => f.id === car.id);
+
+  // Функция переключения состояния избранного
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(car.id));
+    } else {
+      dispatch(addFavorite(car));
+    }
+  };
+
+  // Разбиваем адрес на город и страну
   const parts = car.address.split(',');
   const city = parts[1]?.trim() || '';
   const country = parts[2]?.trim() || '';
@@ -35,14 +43,14 @@ export default function CarList({ car }: CarListProps) {
         <img src={car.img} alt={car.brand} className={css.image} />
         <button
           type="button"
-          // onClick={toggleFavorite}
+          onClick={toggleFavorite}
           className={css.favoriteButton}
         >
-          {/* {isFavorite ? (
+          {isFavorite ? (
             <Icon id="hearton" className={css.activeIcon} />
-          ) : ( */}
-          <Icon id="heart" className={css.inactiveIcon} />
-          {/* )} */}
+          ) : (
+            <Icon id="heart" className={css.inactiveIcon} />
+          )}
         </button>
       </div>
 
