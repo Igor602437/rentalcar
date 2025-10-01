@@ -50,8 +50,7 @@ export default function Catalog() {
     loadCars(1);
   }, []);
 
-  const handleLoadMore = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const handleLoadMore = () => {
     if (page < totalPages) {
       const nextPage = page + 1;
       setPage(nextPage);
@@ -70,8 +69,6 @@ export default function Catalog() {
     setCurrentFilters(filters);
   };
 
-  if (loading) return <Loader />;
-
   return (
     <main>
       <div className={css.container}>
@@ -85,6 +82,7 @@ export default function Catalog() {
             </li>
           ))}
         </ul>
+        {loading && <Loader />}
         {page < totalPages && (
           <button
             type="button"
