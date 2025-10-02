@@ -60,59 +60,59 @@ export default function CarDetails() {
           </p>
 
           <div className={css.techInfo}>
-            <div>
-              <h3 className={css.blockTitle}>Rental Conditions: </h3>
-              <ul className={css.blokList}>
-                {car.rentalConditions.map((item, index) => (
-                  <li key={index} className={css.carDetailsItem}>
-                    <Icon id="check" className={css.svgIcon} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className={css.blokList}>
+              <li>
+                <h3 className={css.blockTitle}>Rental Conditions: </h3>
+              </li>
+              {car.rentalConditions.map((item, index) => (
+                <li key={index} className={css.carDetailsItem}>
+                  <Icon id="check" className={css.svgIcon} />
+                  {item}
+                </li>
+              ))}
+            </ul>
 
-            <div>
-              <h3 className={css.blockTitle}>Car Specifications:</h3>
-              <ul className={css.blokList}>
-                <li className={css.carDetailsItem}>
-                  <Icon id="calendar" className={css.svgIcon} />
-                  Year: {car.year}
-                </li>
-                <li className={css.carDetailsItem}>
-                  <Icon id="car" className={css.svgIcon} />
-                  Type: {car.type}
-                </li>
-                <li className={css.carDetailsItem}>
-                  <Icon id="fuel" className={css.svgIcon} />
-                  Fuel Consumption: {car.fuelConsumption}
-                </li>
-                <li className={css.carDetailsItem}>
-                  <Icon id="gear" className={css.svgIcon} />
-                  Engine Size: {car.engineSize}
-                </li>
-              </ul>
-            </div>
+            <ul className={css.blokList}>
+              <li>
+                <h3 className={css.blockTitle}>Car Specifications:</h3>
+              </li>
+              <li className={css.carDetailsItem}>
+                <Icon id="calendar" className={css.svgIcon} />
+                Year: {car.year}
+              </li>
+              <li className={css.carDetailsItem}>
+                <Icon id="car" className={css.svgIcon} />
+                Type: {car.type}
+              </li>
+              <li className={css.carDetailsItem}>
+                <Icon id="fuel" className={css.svgIcon} />
+                Fuel Consumption: {car.fuelConsumption}
+              </li>
+              <li className={css.carDetailsItem}>
+                <Icon id="gear" className={css.svgIcon} />
+                Engine Size: {car.engineSize}
+              </li>
+            </ul>
 
-            <div>
-              <h3 className={css.blockTitle}>
-                Accessories and functionalities:
-              </h3>
-              <ul className={css.blokList}>
-                {car.accessories.map((item, index) => (
-                  <li key={index} className={css.carDetailsItem}>
-                    <Icon id="check" className={css.svgIcon} />
-                    {item}
-                  </li>
-                ))}
-                {car.functionalities.map((item, index) => (
-                  <li key={index} className={css.carDetailsItem}>
-                    <Icon id="check" className={css.svgIcon} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className={css.blokList}>
+              <li>
+                <h3 className={css.blockTitle}>
+                  Accessories and functionalities:
+                </h3>
+              </li>
+              {car.accessories.map((item, index) => (
+                <li key={index} className={css.carDetailsItem}>
+                  <Icon id="check" className={css.svgIcon} />
+                  {item}
+                </li>
+              ))}
+              {car.functionalities.map((item, index) => (
+                <li key={index} className={css.carDetailsItem}>
+                  <Icon id="check" className={css.svgIcon} />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
