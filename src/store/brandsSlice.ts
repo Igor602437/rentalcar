@@ -10,14 +10,12 @@ interface BrandsState {
   loading: boolean;
   error: string | null;
 }
-// тип состояния с массивом брендов, флагом загрузки и возможной ошибкой
 const initialState: BrandsState = {
   brands: [],
   loading: false,
   error: null,
 };
 
-// делает асинхронный запрос к серверу (загрузка брендов с сервера)
 export const fetchBrands = createAsyncThunk(
   'brands/fetchBrands',
   async (_, { rejectWithValue }) => {
@@ -34,12 +32,10 @@ const brandsSlice = createSlice({
   name: 'brands',
   initialState,
   reducers: {
-    // для очистки списка брендов
     clearBrands(state) {
       state.brands = [];
     },
   },
-  // ловит все состояния асинхронного запроса и обновляет state
   extraReducers: builder => {
     builder
       .addCase(fetchBrands.pending, state => {

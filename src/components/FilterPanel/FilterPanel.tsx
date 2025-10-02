@@ -15,7 +15,7 @@ interface FilterPanelProps {
 
 export default function FilterPanel({ onFilter }: FilterPanelProps) {
   const [brands, setBrands] = useState<string[]>([]);
-  const [brand, setBrand] = useState(''); // ✅ есть локальные стейты
+  const [brand, setBrand] = useState('');
   const [rentalPrice, setRentalPrice] = useState('');
   const [minMileage, setMinMileage] = useState('');
   const [maxMileage, setMaxMileage] = useState('');
@@ -40,7 +40,7 @@ export default function FilterPanel({ onFilter }: FilterPanelProps) {
 
     const filters: Record<string, string> = {
       page: '1',
-      brand: brand.trim(), // ✅ используем локальный стейт
+      brand: brand.trim(),
       rentalPrice: rentalPrice.trim(),
       minMileage: minMileage.trim(),
       maxMileage: maxMileage.trim(),
@@ -59,10 +59,8 @@ export default function FilterPanel({ onFilter }: FilterPanelProps) {
         cleanedFilters.maxMileage
       );
 
-      // Передаём результат наверх
       onFilter(cars, totalPages, filters);
 
-      // Сбрасываем форму после успешного поиска
       setBrand('');
       setRentalPrice('');
       setMinMileage('');

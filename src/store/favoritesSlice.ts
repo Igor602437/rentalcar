@@ -14,13 +14,11 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addFavorite: (state, action: PayloadAction<CarProps>) => {
-      // Проверяем, нет ли уже этого авто в избранном
       if (!state.favorites.find(car => car.id === action.payload.id)) {
         state.favorites.push(action.payload);
       }
     },
     removeFavorite: (state, action: PayloadAction<string>) => {
-      // Удаляем авто по id
       state.favorites = state.favorites.filter(
         car => car.id !== action.payload
       );

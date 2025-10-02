@@ -14,15 +14,12 @@ export default function CarList({ car }: CarListProps) {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
 
-  // Получаем список избранного из глобального состояния
   const favorites = useSelector(
     (state: RootState) => state.favorites.favorites
   );
 
-  // Проверяем, находится ли текущее авто в избранном
   const isFavorite = favorites.some(f => f.id === car.id);
 
-  // Функция переключения состояния избранного
   const toggleFavorite = () => {
     if (isFavorite) {
       dispatch(removeFavorite(car.id));
@@ -31,7 +28,6 @@ export default function CarList({ car }: CarListProps) {
     }
   };
 
-  // Разбиваем адрес на город и страну
   const parts = car.address.split(',');
   const city = parts[1]?.trim() || '';
   const country = parts[2]?.trim() || '';

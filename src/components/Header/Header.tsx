@@ -26,6 +26,7 @@ export default function Header() {
           >
             Catalog
           </NavLink>
+          {/* Added a "Favorites" page */}
           <NavLink
             to="/favorites"
             className={({ isActive }) =>

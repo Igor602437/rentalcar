@@ -18,14 +18,12 @@ export const filtersSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    // Сбрасываем все фильтры к пустым значениям
     resetFilters: state => {
       state.brand = '';
       state.rentalPrice = '';
       state.minMileage = '';
       state.maxMileage = '';
     },
-    // Обновляем фильтры после сброса
     setFilters: (state, action: PayloadAction<Partial<FiltersState>>) => {
       const newFilters = action.payload;
       state.brand = newFilters.brand ?? '';

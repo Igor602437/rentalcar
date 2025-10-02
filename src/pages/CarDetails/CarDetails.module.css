@@ -26,7 +26,6 @@
   font-weight: 600;
   line-height: 1.33;
   display: inline-block;
-  /* margin-right: 16px; */
 }
 .carId {
   font-weight: 500;
@@ -63,7 +62,6 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  /* margin-bottom: 20px; */
   margin-bottom: 4px;
 }
 .blokList {
